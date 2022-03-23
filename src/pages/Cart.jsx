@@ -6,7 +6,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
   const total = () => {
     let price = 0;
     cart.forEach((item) => {
-      price += +(item.salePrice || item.originalPrice);
+      price += +((item.salePrice || item.originalPrice)*item.quantity).toFixed(2);
     });
     return price;
   };
@@ -60,6 +60,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                             changeQuantity(book, event.target.value)
                           }
                           value={book.quantity}
+
                         />
                       </div>
                       <div className="cart__total">
