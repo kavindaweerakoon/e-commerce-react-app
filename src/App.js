@@ -30,15 +30,15 @@ function App() {
   }
 
   function removeItem(item) {
-    setCart(cart.filter(book => book.id !== item.id))
+    setCart(cart.filter((book) => book.id !== item.id));
     console.log("removeItem", item);
   }
 
   function numberItems() {
     let counter = 0;
-    cart.forEach(item => {
-      counter += item.quantity
-    })
+    cart.forEach((item) => {
+      counter += item.quantity;
+    });
     return counter;
   }
 
@@ -49,12 +49,14 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Nav numberItems={numberItems()}/>
+        <Nav numberItems={numberItems()} />
         <Route path="/" exact component={Home} />
         <Route path="/books" exact render={() => <Books books={books} />} />
         <Route
           path="/books/:id"
-          render={() => <BookInfo books={books} addToCart={addToCart} />}
+          render={() => (
+            <BookInfo books={books} addToCart={addToCart} cart={cart} />
+          )}
         />
         <Route
           path="/cart"
