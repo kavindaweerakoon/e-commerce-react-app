@@ -30,18 +30,22 @@ function App() {
   }
 
   function removeItem(item) {
+    // 
     setCart(cart.filter((book) => book.id !== item.id));
     console.log("removeItem", item);
   }
-
+  
+  
   function numberItems() {
+    // this function will return the total number of items in the cart by adding up the quantity of each book in the cart and returning the total number of items in the cart.
     let counter = 0;
     cart.forEach((item) => {
       counter += item.quantity;
     });
     return counter;
   }
-
+ 
+  
   useEffect(() => {
     console.log(cart);
   }, [cart]);
