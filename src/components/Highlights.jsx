@@ -11,6 +11,8 @@ const Highlights = () => {
             Why choose <span className="purple">Library?</span>
           </h2>
           <div className="highlight__wrapper">
+
+            {/* Passing in properties "icon", "subtitle" and "para" into the Highlight .jsx component and doing it 3 times over. */}
             <Highlight
               icon={<FontAwesomeIcon icon="bolt" />}
               subtitle="Easy and Quick"

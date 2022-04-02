@@ -2,6 +2,8 @@ import React from 'react';
 import Logo from "../assets/Library.svg"
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
+// footer page with links to home, about, books, cart with logo and copyright
+
 const Footer = () => {
     return (
         <footer>

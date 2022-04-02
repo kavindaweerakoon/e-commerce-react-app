@@ -4,8 +4,12 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Price from "./Price";
 import Rating from "./Rating";
 
+
+
 const Book = ({ book }) => {
+  // takes in book as a prop and sets it to a variable called book 
   const [img, setImg] = useState();
+  // 
 
   const mountedRef = useRef(true)
 
@@ -24,8 +28,11 @@ const Book = ({ book }) => {
 
   return (
     <div className="book">
+      {/* If the image exists, render the book. Else, render the skeleton. */}
       {img ? (
         <>
+
+          {/* Links to the BookInfo.jsx component with the given id. */}
           <Link to={`/books/${book.id}`}>
             <figure className="book__img--wrapper">
               <img src={img.src} alt="" className="book__img"/>
@@ -36,9 +43,13 @@ const Book = ({ book }) => {
               {book.title}
             </Link>
           </div>
+
+          {/*  Takes the rating property from the book prop and passes it to the Rating .jsx component for rendering. */}
           <div className="book__ratings">
             <Rating rating={book.rating} />
           </div>
+
+          {/*  Takes the salePrice and originalPrice property from the book prop and passes it to the Price .jsx component for rendering. */}
           <Price
             salePrice={book.salePrice}
             originalPrice={book.originalPrice}

@@ -3,12 +3,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LibaryLogo from "../assets/Library.svg";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
+// navbar component
+
 const Nav = ({ numberItems }) => {
+  
+  
   function openMenu() {
+    // function that opens the menu
     document.body.classList += " menu--open";
   }
 
   function closeMenu() {
+    // function that closes the menu
     document.body.classList.remove("menu--open");
   }
 
@@ -35,9 +41,16 @@ const Nav = ({ numberItems }) => {
           <Link to="/cart" className="nav__link">
             <FontAwesomeIcon icon="shopping-cart" />
           </Link>
-          {numberItems > 0 && <span className="cart__length ">{numberItems}</span>}
+          {
+          // if cart has items, show number of items else show nothing 
+          numberItems > 0 && <span className="cart__length ">{numberItems}</span>
+          }
         </li>
       </ul>
+
+      {/*
+      // menu that appears when clicking on the menu button, see CSS to see how the menu is rendered when menu--open is added to the body
+       */}
       <div className="menu__backdrop">
         <button className="btn__menu btn__menu--close" onClick={closeMenu}>
           <FontAwesomeIcon icon="times" />

@@ -2,8 +2,12 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import EmptyCart from "../assets/empty_cart.svg";
 
+
+// cart function takes in cart, changeQuantity, and removeItem as props 
 const Cart = ({ cart, changeQuantity, removeItem }) => {
+  
   const total = () => {
+    // this function calculates the total price of the cart by adding up the salePrice or the originalPrice of each book in the cart and returns the total price 
     let price = 0;
     cart.forEach((item) => {
       price += +((item.salePrice || item.originalPrice)*item.quantity).toFixed(2);

@@ -2,6 +2,8 @@ import React from "react";
 import { books } from "../data";
 import Book from "../ui/Book";
 
+// takes each book from the books array and filters it to return the books with a sale price. It then takes the top 8 books with .slice and renders it with .map by taking each element and passing it to the Book .jsx component as a prop.
+
 const Discounted = () => {
   return (
     <section id="recent">

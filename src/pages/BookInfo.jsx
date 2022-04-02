@@ -10,10 +10,12 @@ const BookInfo = ({ books, addToCart, cart }) => {
   const book = books.find((book) => +book.id === +id);
 
   function addBookToCart(book) {
+    // function that adds the book to the cart 
     addToCart(book);
   }
 
   function bookExistsOnCart() {
+    // function that checks if the book exists on the cart and returns true or false by comparing the book id to the cart id in the cart array that is passed in as a prop.
     return (cart.find(book => book.id === +id))
   }
 
@@ -60,12 +62,16 @@ const BookInfo = ({ books, addToCart, cart }) => {
                     consectetur nulla!
                   </p>
                 </div>
-
-                {bookExistsOnCart() ? (
+                
+                {
+                // if the book exists on the cart, render the checkout button. Else, render the add button.
+                bookExistsOnCart() ? (
                   <Link to={"/cart"} className="book__link">
                     <button className="btn">Checkout</button>
                   </Link>
                 ) : (
+
+                  // adds the book to the cart by calling the addBookToCart function and passing the book as a parameter.
                   <button className="btn" onClick={() => addBookToCart(book)}>
                     Add to cart
                   </button>

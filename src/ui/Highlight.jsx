@@ -1,5 +1,7 @@
 import React from "react";
 
+// takes in icon, subtitle and para as properties from the Highlights component and passes them into the Highlight function.
+
 const Highlight = ({icon, subtitle, para}) => {
   return (
     <div className="highlight">
