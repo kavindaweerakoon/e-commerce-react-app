@@ -7,6 +7,8 @@ import Rating from "../ui/Rating";
 
 const BookInfo = ({ books, addToCart, cart }) => {
   const { id } = useParams();
+
+  // this function takes in a book and returns the book with the given id
   const book = books.find((book) => +book.id === +id);
 
   function addBookToCart(book) {

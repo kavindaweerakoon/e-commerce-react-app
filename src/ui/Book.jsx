@@ -9,11 +9,13 @@ import Rating from "./Rating";
 const Book = ({ book }) => {
   // takes in book as a prop and sets it to a variable called book 
   const [img, setImg] = useState();
-  // 
+  // this function sets the img state to the book url 
 
   const mountedRef = useRef(true)
+ // this function sets the mountedRef to true
 
   useEffect(() => {
+    // this function sets the img state to the book url and sets the mountedRef to false if the component is unmounted 
     const image = new Image();
     image.src = book.url;
     image.onload = () => {
@@ -21,6 +23,7 @@ const Book = ({ book }) => {
         setImg(image);
       }
     };
+    
     return () => {
       mountedRef.current = false;
     }
